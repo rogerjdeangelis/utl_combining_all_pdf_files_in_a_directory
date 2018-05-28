@@ -31,5 +31,32 @@ OUTPUT
   Single file with all pds combined
 
    c:/pdf/iris.pdf
+   
+   
+ *                _              _       _
+ _ __ ___   __ _| | _____    __| | __ _| |_ __ _
+| '_ ` _ \ / _` | |/ / _ \  / _` |/ _` | __/ _` |
+| | | | | | (_| |   <  __/ | (_| | (_| | || (_| |
+|_| |_| |_|\__,_|_|\_\___|  \__,_|\__,_|\__\__,_|
+
+;
+
+ods pdf file="c:/pdf/iris_page1.pdf";
+proc print data=sashelp.iris(obs=10 where=(species="Setosa"));
+run;quit;
+ods pdf close;
+
+ods pdf file="c:/pdf/iris_page2.pdf";
+proc print data=sashelp.iris(obs=10 where=(species="Versicolor"));
+run;quit;
+ods pdf close;
+
+ods pdf file="c:/pdf/iris_page3.pdf";
+proc print data=sashelp.iris(obs=10 where=(species="Virginica"));
+run;quit;
+ods pdf close;
+
+
+
 
 
